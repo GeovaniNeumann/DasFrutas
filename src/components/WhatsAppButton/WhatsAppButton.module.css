@@ -1,0 +1,80 @@
+/* ============ WHATSAPP FLOATING BTN ============ */
+.btn {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 900;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.55);
+  transition: transform var(--transition), box-shadow var(--transition);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+  animation: none;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* ---- Tooltip ---- */
+.tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-text);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+/* Seta do tooltip */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: var(--color-text);
+}
+
+.btn:hover .tooltip {
+  opacity: 1;
+}
+
+/* ---- Pulse animation ---- */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.55);
+  }
+  50% {
+    box-shadow: 0 4px 32px rgba(37, 211, 102, 0.85), 0 0 0 8px rgba(37, 211, 102, 0.15);
+  }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    animation: none;
+  }
+}

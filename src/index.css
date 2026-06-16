@@ -1,0 +1,120 @@
+/* ============================================
+   DasFrutas — Global Reset & Variables
+   ============================================ */
+
+:root {
+  /* Brand Palette */
+  --color-green:        #2D6A1F;
+  --color-green-light:  #4A9E32;
+  --color-green-pale:   #E8F5E1;
+  --color-orange:       #F97316;
+  --color-orange-light: #FDB87A;
+  --color-orange-pale:  #FFF3E8;
+  --color-yellow:       #FCD34D;
+  --color-red:          #DC2626;
+  --color-cream:        #FEFCE8;
+  --color-bg:           #FFFDF5;
+
+  /* Text */
+  --color-text:         #1A2E0E;
+  --color-text-muted:   #5A7049;
+  --color-white:        #FFFFFF;
+
+  /* Typography */
+  --font-display: 'Nunito', sans-serif;
+  --font-logo:    'Playfair Display', serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:   0.5rem;
+  --space-sm:   1rem;
+  --space-md:   1.5rem;
+  --space-lg:   2.5rem;
+  --space-xl:   4rem;
+  --space-2xl:  6rem;
+
+  /* Border radius */
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(45, 106, 31, 0.12);
+  --shadow-md: 0 4px 20px rgba(45, 106, 31, 0.18);
+  --shadow-lg: 0 8px 40px rgba(45, 106, 31, 0.22);
+
+  /* Transitions */
+  --transition: 0.25s ease;
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ============ UTILITIES ============ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+/* ============ SWIPER OVERRIDES ============ */
+.swiper-pagination-bullet {
+  background: var(--color-white) !important;
+  opacity: 0.6 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-orange) !important;
+  opacity: 1 !important;
+  width: 28px !important;
+  border-radius: var(--radius-full) !important;
+}

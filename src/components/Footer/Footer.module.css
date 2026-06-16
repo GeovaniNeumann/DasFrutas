@@ -1,0 +1,220 @@
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--color-text);
+  color: var(--color-white);
+}
+
+.topBar {
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--color-green) 0%,
+    var(--color-orange) 33%,
+    var(--color-yellow) 66%,
+    var(--color-red) 100%
+  );
+}
+
+/* ---- Inner grid ---- */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  text-align: center;
+}
+
+/* ---- Brand Column ---- */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logoFallback {
+  font-family: var(--font-logo);
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--color-white);
+}
+
+.logoFallback span {
+  color: var(--color-orange);
+}
+
+.brandDesc {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: var(--space-xs);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.03em;
+}
+
+/* ---- Links Column ---- */
+.linksCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.colTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-orange);
+  margin-bottom: var(--space-xs);
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: var(--color-orange);
+}
+
+/* ---- Contact Column ---- */
+.contactCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.contactList li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contactList a {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.contactList a:hover {
+  color: var(--color-orange);
+}
+
+.waBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #25D366;
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius-full);
+  margin-top: var(--space-xs);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.waBtn:hover {
+  background: #1db954;
+  transform: translateY(-1px);
+}
+
+/* ---- Bottom bar ---- */
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-sm);
+  text-align: center;
+}
+
+.bottom p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.bottom strong {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (min-width: 640px) {
+  .badges {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 2fr 1fr 1.4fr;
+    text-align: left;
+  }
+
+  .brandCol {
+    align-items: flex-start;
+  }
+
+  .linksCol {
+    align-items: flex-start;
+  }
+
+  .contactCol {
+    align-items: flex-start;
+  }
+
+  .contactList li {
+    justify-content: flex-start;
+  }
+}

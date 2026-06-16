@@ -1,0 +1,317 @@
+/* ============ HEADER ============ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Transparente sobre o hero */
+.transparent {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Sólido após scroll */
+.scrolled {
+  background: rgba(255, 253, 245, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(45, 106, 31, 0.15);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* ---- Logo ---- */
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.logo img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logoFallback {
+  font-family: var(--font-logo);
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--color-green);
+  transition: color 0.4s ease;
+}
+
+.scrolled .logoFallback {
+  color: var(--color-green);
+}
+
+.logoFallback span {
+  color: var(--color-orange);
+}
+
+/* ---- Nav Desktop ---- */
+.nav { display: none; }
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+  position: relative;
+  padding-bottom: 3px;
+  transition: color var(--transition);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-orange);
+  border-radius: var(--radius-full);
+  transition: width var(--transition);
+}
+
+.navLink:hover { color: var(--color-white); }
+.navLink:hover::after { width: 100%; }
+
+/* Links ficam escuros após scroll */
+.scrolled .navLink {
+  color: var(--color-text);
+}
+.scrolled .navLink:hover {
+  color: var(--color-green);
+}
+
+.ctaBtn {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.88rem;
+  background: var(--color-orange);
+  color: var(--color-white);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-full);
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+
+.ctaBtn:hover {
+  background: #e8620a;
+  transform: translateY(-1px);
+}
+
+/* ---- Hambúrguer ---- */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 7px;
+  border-radius: var(--radius-sm);
+  z-index: 1;
+  transition: background var(--transition);
+}
+
+.hamburger:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.4s ease;
+}
+
+/* Barrinhas escuras após scroll */
+.scrolled .hamburger span {
+  background: var(--color-green);
+}
+
+.scrolled .hamburger:hover {
+  background: var(--color-green-pale);
+}
+
+/* X animado */
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- Overlay ---- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1090;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.overlayVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---- Drawer Mobile ---- */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 88vw);
+  background: var(--color-white);
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 var(--space-lg) 0;
+  transform: translateX(100%);
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -12px 0 40px rgba(0,0,0,0.18);
+  overflow-y: auto;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+/* Cabeçalho do drawer */
+.drawerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem var(--space-md);
+  border-bottom: 1px solid rgba(45,106,31,0.1);
+  flex-shrink: 0;
+}
+
+.drawerBrand {
+  font-family: var(--font-logo);
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--color-green);
+}
+
+.drawerBrand span {
+  color: var(--color-orange);
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  background: var(--color-green-pale);
+  transition: background var(--transition), color var(--transition);
+}
+
+.closeBtn:hover {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+/* Links do drawer */
+.drawerList {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm) var(--space-sm);
+  gap: 2px;
+  flex: 1;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-md);
+  transition: background var(--transition), color var(--transition);
+}
+
+.drawerLink:hover {
+  background: var(--color-green-pale);
+  color: var(--color-green);
+}
+
+/* CTA do drawer */
+.drawerCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 var(--space-sm);
+  background: var(--color-green);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.95rem;
+  border-radius: var(--radius-full);
+  transition: background var(--transition);
+}
+
+.drawerCta:hover {
+  background: var(--color-green-light);
+}
+
+/* Telefones no drawer */
+.drawerContacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(45,106,31,0.1);
+}
+
+.drawerContacts a {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.drawerContacts a:hover {
+  color: var(--color-green);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (min-width: 768px) {
+  .nav       { display: block; }
+  .hamburger { display: none; }
+}

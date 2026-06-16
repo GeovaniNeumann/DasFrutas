@@ -1,0 +1,150 @@
+/* ============ DIFFERENTIALS ============ */
+.section {
+  padding: var(--space-xl) 0;
+  background: var(--color-cream);
+  position: relative;
+}
+
+/* Faixas decorativas */
+.topStripe,
+.bottomStripe {
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--color-green) 0%,
+    var(--color-orange) 33%,
+    var(--color-yellow) 66%,
+    var(--color-red) 100%
+  );
+}
+
+/* ---- Header ---- */
+.header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-green);
+  background: var(--color-green-pale);
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius-full);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.title span {
+  color: var(--color-orange);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 540px;
+  line-height: 1.65;
+}
+
+/* ---- Grid ---- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+/* ---- Card ---- */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Accent colors via top border */
+.card[class*="accent-green"]::before  { background: var(--color-green); }
+.card[class*="accent-orange"]::before { background: var(--color-orange); }
+.card[class*="accent-red"]::before    { background: var(--color-red); }
+.card[class*="accent-yellow"]::before { background: #d4a409; }
+
+/* Workaround: CSS Modules + dynamic class */
+.accent-green::before  { background: var(--color-green) !important; }
+.accent-orange::before { background: var(--color-orange) !important; }
+.accent-red::before    { background: var(--color-red) !important; }
+.accent-yellow::before { background: #c49a00 !important; }
+
+.cardIcon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (min-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
