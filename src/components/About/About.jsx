@@ -42,7 +42,7 @@ export default function About() {
               Ver diferenciais
             </a>
             <a
-              href="https://wa.me/5541996574290"
+              href="https://wa.me/554198151590?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20DasFrutas."
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnSecondary}

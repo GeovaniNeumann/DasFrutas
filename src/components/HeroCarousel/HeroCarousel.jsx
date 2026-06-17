@@ -11,6 +11,7 @@ const SLIDES = [
   {
     id: 1,
     image: '/imghero1.webp',
+    imageMobile: '/heromob1.webp',
     fallbackColor: '#2D6A1F',
     title: 'Suco Natural DasFrutas',
     subtitle: '100% puro, sem conservantes e cheio de vitaminas',
@@ -18,6 +19,7 @@ const SLIDES = [
   {
     id: 2,
     image: '/imghero2.webp',
+    imageMobile: '/heromob2.webp',
     fallbackColor: '#F97316',
     title: 'Suco Natural DasFrutas',
     subtitle: 'Feito com frutas selecionadas, 500ml de saúde pura',
@@ -25,6 +27,7 @@ const SLIDES = [
   {
     id: 3,
     image: '/imghero3.webp',
+    imageMobile: '/heromob3.webp',
     fallbackColor: '#DC2626',
     title: 'Suco Natural DasFrutas',
     subtitle: 'Refrescante, saudável e direto da natureza para você',
@@ -32,13 +35,14 @@ const SLIDES = [
   {
     id: 4,
     image: '/imghero4.webp',
+    imageMobile: '/heromob4.webp',
     fallbackColor: '#4A9E32',
     title: 'Suco Natural DasFrutas',
     subtitle: 'Sabor autêntico que só frutas de verdade entregam',
   },
 ]
 
-const WA_LINK = 'https://wa.me/5541996574290?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido.'
+const WA_LINK = 'https://wa.me/5541998151590?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido.'
 
 /**
  * Hero com carrossel Swiper
@@ -65,11 +69,22 @@ export default function HeroCarousel() {
               className={styles.slide}
               style={{ '--fallback-color': slide.fallbackColor }}
             >
-              {/* Imagem de fundo */}
+              {/* Imagem de fundo - Desktop */}
               <img
                 src={slide.image}
                 alt={`DasFrutas — slide ${slide.id}`}
-                className={styles.slideImg}
+                className={`${styles.slideImg} ${styles.slideImgDesktop}`}
+                loading={slide.id === 1 ? 'eager' : 'lazy'}
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none'
+                }}
+              />
+
+              {/* Imagem de fundo - Mobile */}
+              <img
+                src={slide.imageMobile}
+                alt={`DasFrutas — slide ${slide.id} mobile`}
+                className={`${styles.slideImg} ${styles.slideImgMobile}`}
                 loading={slide.id === 1 ? 'eager' : 'lazy'}
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'

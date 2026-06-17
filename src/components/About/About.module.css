@@ -133,6 +133,11 @@
   align-items: center;
 }
 
+.imageCol {
+  padding-bottom: 30px; /* espaço para o badge não ser cortado */
+  padding-right: 20px;
+}
+
 .imageFrame {
   position: relative;
   width: 100%;
@@ -141,8 +146,9 @@
 
 .image {
   width: 100%;
-  height: clamp(280px, 45vw, 480px);
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain; /* garante que a imagem inteira fique visível */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
 }
@@ -150,7 +156,7 @@
 /* Fallback colorido quando imagem falha */
 .imageFallback {
   width: 100%;
-  height: clamp(280px, 45vw, 480px);
+  aspect-ratio: 4 / 3;
   background: linear-gradient(135deg, var(--color-green-pale) 0%, var(--color-orange-pale) 100%);
   border-radius: var(--radius-lg);
   display: flex;
@@ -206,6 +212,11 @@
 @media (min-width: 900px) {
   .inner {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .imageCol {
+    padding-bottom: 30px; /* mantém espaço para o badge */
+    padding-right: 30px;
   }
 }
 

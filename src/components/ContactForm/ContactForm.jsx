@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './ContactForm.module.css'
 
-const WA_NUMBER = '5541996574290'
+const WA_NUMBER = '5541998151590' 
 
 const SABORES = [
   'Laranja',
@@ -137,8 +137,8 @@ export default function ContactForm() {
                 <span className={styles.contactIcon}>📱</span>
                 <div>
                   <strong>WhatsApp</strong>
-                  <a href="https://wa.me/5541996574290" target="_blank" rel="noopener noreferrer">
-                    (41) 99657-4290
+                  <a href="https://wa.me/5541998151590" target="_blank" rel="noopener noreferrer">
+                    (41) 99815-1590
                   </a>
                 </div>
               </li>

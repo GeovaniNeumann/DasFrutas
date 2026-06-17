@@ -34,6 +34,16 @@
   will-change: transform;
 }
 
+/* Desktop image - visível em telas maiores */
+.slideImgDesktop {
+  display: block;
+}
+
+/* Mobile image - oculta por padrão */
+.slideImgMobile {
+  display: none;
+}
+
 /* Ken-Burns no slide ativo */
 .swiper :global(.swiper-slide-active) .slideImg {
   transform: scale(1.07);
@@ -142,6 +152,37 @@
 }
 
 /* ============ RESPONSIVE ============ */
+
+/* Mobile: até 767px - mostra imagem mobile, esconde desktop */
+@media (max-width: 767px) {
+  .slideImgDesktop {
+    display: none;
+  }
+  
+  .slideImgMobile {
+    display: block;
+  }
+  
+  /* Ajuste de padding para mobile */
+  .content {
+    padding: calc(72px + var(--space-md)) var(--space-sm) var(--space-lg);
+    max-width: 100%;
+  }
+  
+  .title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+  }
+  
+  .subtitle {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+  
+  .ctaBtn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .content {
     padding: calc(72px + var(--space-xl)) var(--space-lg) var(--space-xl);

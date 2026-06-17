@@ -3,8 +3,9 @@ import styles from './Header.module.css'
 
 const NAV_LINKS = [
   { label: 'Início',   href: '#inicio'   },
-  { label: 'Produtos', href: '#produtos' },
   { label: 'Sobre',    href: '#sobre'    },
+  { label: 'Produtos', href: '#produtos' },
+  { label: 'Cardápio', href: '#cardapio' },
   { label: 'Contato',  href: '#contato'  },
 ]
 
@@ -69,7 +70,7 @@ export default function Header() {
               ))}
               <li>
                 <a
-                  href="https://wa.me/5541996574290"
+                  href="https://wa.me/5541998151590"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.ctaBtn}

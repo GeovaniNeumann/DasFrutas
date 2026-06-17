@@ -4,6 +4,7 @@ const QUICK_LINKS = [
   { label: 'Início',   href: '#inicio'   },
   { label: 'Sobre',    href: '#sobre'    },
   { label: 'Produtos', href: '#produtos' },
+  { label: 'Cardápio', href: '#cardapio' },
   { label: 'Contato',  href: '#contato'  },
 ]
 
@@ -25,16 +26,18 @@ export default function Footer() {
         {/* Coluna 1 — Marca */}
         <div className={styles.brandCol}>
           <a href="#inicio" className={styles.logoLink} aria-label="DasFrutas">
-            <img
-              src="/logo.webp"
-              alt="DasFrutas logo"
-              className={styles.logo}
-              width={120}
-              height={48}
-              loading="lazy"
-              onError={(e) => { e.currentTarget.style.display = 'none' }}
-            />
-            <span className={styles.logoFallback}>Das<span>Frutas</span></span>
+            <div className={styles.logoWrapper}>
+              <img
+                src="/logo.webp"
+                alt="DasFrutas logo"
+                className={styles.logo}
+                width={120}
+                height={48}
+                loading="lazy"
+                onError={(e) => { e.currentTarget.style.display = 'none' }}
+              />
+              <span className={styles.logoFallback}>Das<span>Frutas</span></span>
+            </div>
           </a>
           <p className={styles.brandDesc}>
             Suco 100% natural, feito com frutas selecionadas.
@@ -80,7 +83,7 @@ export default function Footer() {
           </ul>
 
           <a
-            href="https://wa.me/5541996574290"
+            href="https://wa.me/5541998151590?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido."
             target="_blank"
             rel="noopener noreferrer"
             className={styles.waBtn}
@@ -96,6 +99,17 @@ export default function Footer() {
         <p>
           © {year} <strong>DasFrutas</strong> — Sabor que vem da natureza.
           Todos os direitos reservados.
+        </p>
+        <p className={styles.credit}>
+          Feito por{' '}
+          <a
+            href="https://www.neumannwebsolutions.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.creditLink}
+          >
+            Neumann Web Solutions
+          </a>
         </p>
       </div>
     </footer>

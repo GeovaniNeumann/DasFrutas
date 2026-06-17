@@ -1,0 +1,277 @@
+/* ============ CARDAPIO ============ */
+.cardapio {
+  padding: var(--space-xl) 0;
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-white) 100%);
+  scroll-margin-top: 72px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+/* ---- Header ---- */
+.header {
+  text-align: center;
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  background: var(--color-orange-pale);
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-text);
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+}
+
+.title span {
+  color: var(--color-green);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ---- Image ---- */
+.imageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imageFrame:hover {
+  transform: scale(1.01);
+  box-shadow: var(--shadow-xl);
+}
+
+.cardapioImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.imageFrame:hover .cardapioImg {
+  transform: scale(1.02);
+}
+
+/* Fallback quando imagem não carrega */
+.fallback {
+  min-height: 400px;
+  background: linear-gradient(135deg, var(--color-green-pale) 0%, var(--color-orange-pale) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+}
+
+.fallback::after {
+  content: '🍊📋 Cardápio DasFrutas';
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-green);
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ---- Badge flutuante ---- */
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.badgeIcon {
+  font-size: 1.2rem;
+}
+
+.badgeText {
+  white-space: nowrap;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* ---- Actions ---- */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-green);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 20px rgba(45, 106, 31, 0.35);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.ctaBtn:hover {
+  background: var(--color-green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(45, 106, 31, 0.5);
+}
+
+.ctaBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-orange);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.ctaBtnSecondary:hover {
+  background: #e8620a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+}
+
+.ctaIcon {
+  font-size: 1.15rem;
+}
+
+/* ---- Features ---- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  width: 100%;
+  max-width: 680px;
+  margin-top: var(--space-xs);
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--color-white);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.featureItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.featureText {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (min-width: 576px) {
+  .features {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .cardapio {
+    padding: var(--space-2xl) 0;
+  }
+
+  .badge {
+    top: 24px;
+    right: 24px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .fallback {
+    min-height: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .actions {
+    gap: var(--space-md);
+  }
+
+  .ctaBtn,
+  .ctaBtnSecondary {
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  .fallback {
+    min-height: 600px;
+  }
+}

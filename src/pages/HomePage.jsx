@@ -2,6 +2,7 @@ import Header        from '../components/Header/Header.jsx'
 import HeroCarousel  from '../components/HeroCarousel/HeroCarousel.jsx'
 import About         from '../components/About/About.jsx'
 import Differentials from '../components/Differentials/Differentials.jsx'
+import Cardapio      from '../components/Cardapio/Cardapio.jsx'
 import ContactForm   from '../components/ContactForm/ContactForm.jsx'
 import WhatsAppButton from '../components/WhatsAppButton/WhatsAppButton.jsx'
 import Footer        from '../components/Footer/Footer.jsx'
@@ -23,6 +24,11 @@ export default function HomePage() {
 
         <section id="produtos">
           <Differentials />
+        </section>
+
+        {/* Cardápio antes do contato */}
+        <section id="cardapio">
+          <Cardapio />
         </section>
 
         <section id="contato">
