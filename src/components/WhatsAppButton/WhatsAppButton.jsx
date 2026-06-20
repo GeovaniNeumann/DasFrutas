@@ -7,9 +7,12 @@ import styles from './WhatsAppButton.module.css'
  * - Pulsa suavemente para chamar atenção
  */
 export default function WhatsAppButton() {
+  // Mensagem personalizada igual ao formulário
+  const mensagem = '👋 Olá! Vim através do site DasFrutas e gostaria de fazer um pedido:'
+
   return (
     <a
-      href="https://wa.me/5541996574290"
+      href={`https://wa.me/5541996574290?text=${encodeURIComponent(mensagem)}`}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.btn}

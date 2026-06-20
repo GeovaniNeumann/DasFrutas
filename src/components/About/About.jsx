@@ -7,7 +7,7 @@ import styles from './About.module.css'
  */
 export default function About() {
   const highlights = [
-    { emoji: '🍊', text: 'Suco 100% natural, sem adição de açúcar' },
+    { emoji: '🍊', text: 'Suco 100% natural' },
     { emoji: '🚫', text: 'Sem conservantes ou corantes artificiais' },
     { emoji: '💊', text: 'Fonte rica em vitaminas e antioxidantes' },
     { emoji: '❄️', text: 'Sempre fresco, mantendo o sabor original' },
@@ -23,7 +23,7 @@ export default function About() {
           <span className={styles.eyebrow}>Quem somos</span>
           <h2 className={styles.title}>Sobre <span>DasFrutas</span></h2>
           <p className={styles.lead}>
-            Nascemos com uma missão simples: levar o sabor verdadeiro da natureza
+            Nascemos com uma missão simples levar o sabor verdadeiro da natureza
             direto para o seu copo. Cada garrafa DasFrutas é produzida com
             frutas cuidadosamente selecionadas, sem atalhos e sem químicos.
           </p>

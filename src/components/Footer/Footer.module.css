@@ -153,6 +153,22 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Estilo para o ícone do WhatsApp */
+.contactIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.contactIcon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
 .contactList a {
   color: rgba(255, 255, 255, 0.85);
   font-weight: 600;

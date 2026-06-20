@@ -10,6 +10,9 @@ const QUICK_LINKS = [
 
 const year = new Date().getFullYear()
 
+// Mensagem personalizada igual ao formulário e botão WhatsApp
+const MENSAGEM_WHATSAPP = '👋 Olá! Vim através do site DasFrutas e gostaria de fazer um pedido:'
+
 /**
  * Rodapé completo
  * - Mobile: centralizado em coluna única
@@ -40,8 +43,7 @@ export default function Footer() {
             </div>
           </a>
           <p className={styles.brandDesc}>
-            Suco 100% natural, feito com frutas selecionadas.
-            <br />Sem conservantes. Sabor que vem da natureza.
+            Suco 100% natural, feito com frutas selecionadas. Sem conservantes o sabor que vem direto da natureza.
           </p>
           <div className={styles.badges} aria-label="Selos de qualidade">
             {['🌿 Natural', '🚫 Sem conservantes', '💊 Vitaminas'].map((b) => (
@@ -67,8 +69,13 @@ export default function Footer() {
           <h3 className={styles.colTitle}>Contato</h3>
           <ul className={styles.contactList}>
             <li>
-              <span aria-hidden="true">📱</span>
-              <a href="https://wa.me/5541996574290" target="_blank" rel="noopener noreferrer">
+              <span className={styles.contactIcon}>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#25D366" aria-hidden="true">
+                  <path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.149-.149.346-.39.523-.585.176-.195.234-.336.351-.559.117-.226.06-.42-.029-.585-.087-.165-.787-1.89-1.077-2.587-.18-.434-.359-.452-.524-.45-.165 0-.351 0-.541-.001-.19 0-.49.075-.749.345-.255.27-1.001.978-1.001 2.385 0 1.41.964 2.771 1.097 2.971.135.196 1.873 2.86 4.633 4.026 2.357.997 2.84.795 3.354.748.51-.045 1.679-.689 1.916-1.355.232-.667.232-1.236.157-1.355-.074-.121-.301-.196-.601-.346z"/>
+                  <path d="M12.012 2c-5.506 0-9.989 4.478-9.989 9.985 0 1.764.461 3.479 1.336 4.985L2 22l5.176-1.34a9.95 9.95 0 0 0 4.836 1.236h.005c5.504 0 9.984-4.479 9.984-9.985.003-2.665-1.036-5.172-2.923-7.06A9.945 9.945 0 0 0 12.012 2zm5.864 14.063c-.659 1.845-3.273 3.385-5.864 3.385-2.196 0-4.213-.852-5.711-2.265l.005.005a8.296 8.296 0 0 1-2.55-5.972c0-4.582 3.732-8.314 8.318-8.314 2.224 0 4.31.866 5.879 2.434a8.286 8.286 0 0 1 2.439 5.882c0 1.756-.531 3.426-1.516 4.845z"/>
+                </svg>
+              </span>
+              <a href={`https://wa.me/5541996574290?text=${encodeURIComponent(MENSAGEM_WHATSAPP)}`} target="_blank" rel="noopener noreferrer">
                 (41) 99657-4290
               </a>
             </li>
@@ -83,7 +90,7 @@ export default function Footer() {
           </ul>
 
           <a
-            href="https://wa.me/5541998151590?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido."
+            href={`https://wa.me/5541998151590?text=${encodeURIComponent(MENSAGEM_WHATSAPP)}`}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.waBtn}
@@ -97,7 +104,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className={styles.bottom}>
         <p>
-          © {year} <strong>DasFrutas</strong> — Sabor que vem da natureza.
+          © {year} <strong>DasFrutas</strong> Sabor que vem da natureza.
           Todos os direitos reservados.
         </p>
         <p className={styles.credit}>
