@@ -28,11 +28,6 @@ export default function Cardapio() {
                 e.currentTarget.parentElement.classList.add(styles.fallback)
               }}
             />
-            
-            <div className={styles.badge}>
-              <span className={styles.badgeIcon}>🍊</span>
-              <span className={styles.badgeText}>+10 sabores</span>
-            </div>
           </div>
         </div>
 
@@ -73,8 +68,8 @@ export default function Cardapio() {
             <span className={styles.featureText}>Entrega rápida</span>
           </div>
           <div className={styles.featureItem}>
-            <span className={styles.featureIcon}>❤️</span>
-            <span className={styles.featureText}>Feito com amor</span>
+            <span className={styles.featureIcon}>🖐️</span>
+            <span className={styles.featureText}>Produção artesanal</span>
           </div>
         </div>
 

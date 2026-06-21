@@ -455,7 +455,6 @@ export default function ContactForm() {
                       {[
                         { value: 'Com açúcar',  emoji: '🍬', label: 'Com açúcar'  },
                         { value: 'Sem açúcar',  emoji: '🌿', label: 'Sem açúcar'  },
-                        { value: 'Pouco açúcar', emoji: '🍃', label: 'Pouco açúcar' },
                       ].map((opt) => (
                         <label
                           key={opt.value}
